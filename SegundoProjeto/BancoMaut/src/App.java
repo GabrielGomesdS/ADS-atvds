@@ -13,10 +13,10 @@ public class App {
       
           contaBanco1.Fregues = fregues1;
       
-          System.out.println("agencia da conta: " + contaBanco1.agencia);
-          System.out.println("número da conta: " + contaBanco1.numero);
-          System.out.println("nome do cliente da conta: " + contaBanco1.Fregues.nome);
-          System.out.println("cpf do cliente da conta: " + contaBanco1.Fregues.CPF);
+          System.out.println("A agência dessa conta é: " + contaBanco1.agencia);
+          System.out.println("O número dessa conta é: " + contaBanco1.numero);
+          System.out.println("O nome do freguês dono dessa conta é: " + contaBanco1.Fregues.nome);
+          System.out.println("O CPF do freguês dono dessa conta é: " + contaBanco1.Fregues.CPF);
         }
       
       }
