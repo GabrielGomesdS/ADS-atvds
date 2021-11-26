@@ -2,6 +2,6 @@ public class ContaBanco {
     int agencia;
     int numero;
     double saldo;
-    Cliente cliente;
+    Fregues Fregues;
   
   }

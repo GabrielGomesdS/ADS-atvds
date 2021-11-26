@@ -11,7 +11,7 @@ public class App {
           fregues1.nome = "Gabriel";
           fregues1.CPF = "857289036";
       
-          contaBanco1.Fregues = Fregues1;
+          contaBanco1.Fregues = fregues1;
       
           System.out.println("agencia da conta: " + contaBanco1.agencia);
           System.out.println("número da conta: " + contaBanco1.numero);
