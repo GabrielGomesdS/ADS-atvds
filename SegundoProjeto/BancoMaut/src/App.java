@@ -7,15 +7,15 @@ public class App {
     ContaBanco contaBanco1 = new ContaBanco(923, 667, fregues1);
     System.out.println("Agencia: " + contaBanco1.getAgencia() +", " + " numero: " + contaBanco1.getNumero() + "," + " nome: " +
     contaBanco1.getFregues().getnome());
-    contaBanco1.depositar(200);
+    contaBanco1.depositar(300);
     
     System.out.println("Seu saldo atual da primeira conta de banco é: " + contaBanco1.getSaldo());
     
     
-    contaBanco1.sacar(150);
+    contaBanco1.sacar(250);
     System.out.println("Seu saldo atual da primeira conta de banco é: " + contaBanco1.getSaldo());
     
-    contaBanco1.depositar(1000);
+    contaBanco1.depositar(3000);
     System.out.println("Seu saldo atual da primeira conta de banco é: " + contaBanco1.getSaldo());
    
 
