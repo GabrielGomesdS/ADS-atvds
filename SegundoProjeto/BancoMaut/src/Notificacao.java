@@ -1,8 +1,9 @@
-
 public class Notificacao {
-    
-  public void enviarEmail(String email, String operacao, Double valor) {
-    System.out.println("Enviando email para " + email + " com a operacao " + operacao + " e o valor " + valor);
-}
 
+  public void enviarEmail(String operacao, double valor) {
+    System.out.println("~~~~~> Enviando email ~~~~~>");
+    System.out.println("Esta operação foi realizada com sucesso: " + operacao);
+    System.out.println("O valor atual é: " + valor);
+    System.out.println("***** Email enviado *****");
+  }
 }

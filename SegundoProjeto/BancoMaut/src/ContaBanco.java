@@ -4,39 +4,41 @@ public class ContaBanco {
   private  double saldo;
   private  Fregues Fregues;
   
+  
   public ContaBanco(int agencia, int numero, Fregues Fregues){
     this.agencia = agencia;
     this.numero = numero;
     this.Fregues = Fregues;
   }
-  public void depositar(double deposito){
-    if (deposito <= 0){
-        System.out.println("É impossivel o deposito com quantias de valores negativos");
+  public void depositar(double valor){
+    if (valor < 0){
+        System.out.println("Não é permitido o depositar de valores negativos");
     }
-    this.saldo += deposito;
-    System.out.println("Valor depositado com sucesso, o seu saldo atual é: " + saldo);
-  }
-  public void sacar(double saque){
-    if(saque <= saldo){
-        saldo -= saque;
+    this.saldo += valor;
+    System.out.println("Aqui está o Valor depositado, o seu saldo atual é: " + saldo);
+    this.enviaNotificacao("Valor depositado", valor);
+}
+public boolean sacar(double valor){
+    if(valor <= saldo){
+        saldo -= valor;
         System.out.println("Saque realizado com sucesso, o seu saldo atual é: " + saldo);
+        this.enviaNotificacao("Valor sacado", valor);        
+        return true;
     } else{
-        System.out.println("Você não tem quantia monetária suficiente para sacar esse dinheiro");
+        System.out.println("Você não tem o suficiente para poder sacar esse valor");
+    }   return false;
+}
+public void tranferencia(double valor, ContaBanco contaDestino) {
+    System.out.println("Transferindo valor de uma conta para outra =>=>");
+    boolean saqueComSucesso = this.sacar(valor);
+    if (saqueComSucesso){
+        contaDestino.depositar(valor);
     }
-  }
-  public void transferencia(ContaBanco contaBanco2, double valorRc){
-    if (saldo <=valorRc ){
-      return; 
-    }
-    this.saldo -= valorRc;
-    contaBanco2.trans(valorRc);
-    System.out.println("transfererindo para outra conta...");
-  }
-
-
-  public void trans(double valorTf){
-    this.saldo += valorTf;
-  }
+    this.enviaNotificacao("transferncia", valor);
+}
+private void enviaNotificacao(String operacao, double valor ){
+    new Notificacao().enviarEmail(operacao, valor);
+}
 
   public int getAgencia() {
     return agencia;
@@ -53,4 +55,5 @@ public Fregues getFregues() {
 public double getSaldo(){
     return saldo;
   }
+
 }
